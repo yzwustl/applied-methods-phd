@@ -37,6 +37,7 @@ psid_control <- psid_data[psid_data$treat == 0, ]
 
 dw_data <- rbind(nsw_treat, psid_control)
 ```
+
 ```{r}
 logit_model <- feglm(treat ~ age + education + hispanic + black + married + nodegree + re74 + re75, data = dw_data, family = "binomial")
 pscore_logit <- predict(logit_model, dw_data)
